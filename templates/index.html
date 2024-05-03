@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site made with Mobirise Online Website Builder v5.9.13, https://a.mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v5.9.13, a.mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/photo-1558449028-b53a39d100fc.jpeg" type="image/x-icon">
+  <meta name="description" content="Deploying a deep learning project to predict energy consumption in base stations using XGBoost and LSTM models.">
+  <title>Energy Prediction Interface</title>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/web/assets/mobirise-icons2/mobirise2.css?rnd=1714523055836">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/bootstrap/css/bootstrap.min.css?rnd=1714523055837">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/bootstrap/css/bootstrap-grid.min.css?rnd=1714523055837">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/bootstrap/css/bootstrap-reboot.min.css?rnd=1714523055837">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/parallax/jarallax.css?rnd=1714523055837">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/dropdown/css/style.css?rnd=1714523055837">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/socicon/css/styles.css?rnd=1714523055837">
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/theme/css/style.css?rnd=1714523055837">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="stylesheet" href="https://r.mobirisesite.com/416637/assets/css/mbr-additional.css?rnd=1714523055837" type="text/css">
+  
+  
+  
+  
+</head>
+<body>
+  
+  <section data-bs-version="5.1" class="menu menu2 cid-ubtA1HwmLz" once="menu" id="menu-5-ubtA1HwmLz">
+	
+
+	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+					<a href="https://mobiri.se">
+						<img src="assets/images/photo-1558449028-b53a39d100fc.jpeg" alt="Mobirise Website Builder" style="height: 4.3rem;">
+					</a>
+				</span>
+				<span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="https://mobiri.se">EnergiX</a></span>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se" aria-expanded="false">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="https://mobiri.se">Predict</a>
+					</li></ul>
+				
+				<div class="navbar-buttons mbr-section-btn">
+					<a class="btn btn-primary display-4" href="https://mobiri.se">Get Insights</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</section>
+
+<section data-bs-version="5.1" class="header18 cid-ubtA1Hx62M mbr-fullscreen" style="background-image: url('C:/Users/arwar/OneDrive/Desktop/5G%20AI_files/h'); background-size: cover; background-position: center;" id="hero-15-ubtA1Hx62M">
+  
+
+  <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-12">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+          <strong>Power Forecast</strong>
+        </h1>
+        
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Unleash the Future: Predict Energy Consumption in Base Stations with Cutting-Edge Deep Learning Models!</p>
+        <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="https://mobiri.se">Explore More</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="article12 cid-ubtA1Hxecv" id="about-me-12-ubtA1Hxecv">    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2">
+                <strong>Who We Are</strong>
+                </h3>
+                
+                <p class="mbr-text mbr-fonts-style display-7">Welcome to EnergiX, where we revolutionize energy forecasting using advanced deep learning techniques.</p>
+                <p class="mbr-text mbr-fonts-style display-7">Our mission is to empower businesses by accurately predicting energy consumption in base stations.</p>
+                <p class="mbr-text mbr-fonts-style display-7">Join us on this electrifying journey towards a sustainable and efficient future!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article4 cid-ubtA1HxKbK" id="generic-text-4-ubtA1HxKbK">
+	
+
+	
+	
+
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-12 col-lg-6 image-wrapper">
+				<img class="w-100" src="assets/images/photo-1472313420546-a46e561861d8.jpeg" alt="Mobirise Website Builder">
+			</div>
+			<div class="col-12 col-md-12 col-lg">
+				<div class="text-wrapper align-left">
+					<h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+						<strong>Our Approach</strong>
+					</h1>
+					<p class="mbr-text mbr-fonts-style mb-3 display-7">At EnergiX, we've harnessed the power of XGBoost and LSTM models to predict energy usage in base stations like never before.</p>
+
+					<p class="mbr-text mbr-fonts-style mb-3 display-7">Experience the thrill of precision forecasting as you input station characteristics and witness the magic unfold.</p>
+					<p class="mbr-text mbr-fonts-style mb-3 display-7">Get ready to be amazed by the accurate energy predictions delivered by our state-of-the-art models!</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="features19 cid-ubtA1HyyTO" id="features-19-ubtA1HyyTO">
+    
+    
+    <section data-bs-version="5.1" class="features19 cid-ubtA1HyyTO" id="features-19-ubtA1HyyTO">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 mb-5 content-head">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Energy Prediction Interface</strong>
+                    </h3>
+                    <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Empower Your Predictions with XGBoost and LSTM Models</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 item features-without-image item-mb">
+                    <div class="item-wrapper">
+                        <div class="card-box align-left">
+                            <div class="img-wrapper mb-3">
+                                <img class="" src="assets/images/photo-1517925035435-7976539b920d.jpeg">
+                            </div>
+                            <h5 class="card-title mbr-fonts-style display-5">
+                                <strong><a href="#contact-form-2-ubtA1HzytA">Interactive Form</a></strong>
+                            </h5>
+                            <p class="card-text mbr-fonts-style display-7">Input Station Characteristics and Predict Energy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 item features-without-image item-mb">
+                    <div class="item-wrapper">
+                        <div class="card-box align-left">
+                            <div class="img-wrapper mb-3">
+                                <img class="" src="assets/images/photo-1467533003447-e295ff1b0435.jpeg">
+                            </div>
+                            <h5 class="card-title mbr-fonts-style display-5">
+                                <strong>Dual Model Prediction</strong>
+                            </h5>
+                            <p class="card-text mbr-fonts-style display-7">Get Predictions from XGBoost and LSTM Models</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 item features-without-image item-mb">
+                    <div class="item-wrapper">
+                        <div class="card-box align-left">
+                            <div class="img-wrapper mb-3">
+                                <img class="" src="assets/images/photo-1463173904305-ba479d2123b7.jpeg">
+                            </div>
+                            <h5 class="card-title mbr-fonts-style display-5">
+                                <strong>Effortless Insights</strong>
+                            </h5>
+                            <p class="card-text mbr-fonts-style display-7">Instantly Know Predicted Energy Values</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+<section data-bs-version="5.1" class="features023 cid-ubtA1HyntL" id="metrics-1-ubtA1HyntL">
+
+    
+
+    
+    
+    <div class="container">
+        
+        <div class="row content-row justify-content-center">
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>100%</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Accuracy Rate</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>24/7</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Availability</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>Fast</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Prediction Speed</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="header14 cid-ubtA1Hyfy3 mbr-parallax-background" id="call-to-action-9-ubtA1Hyfy3">
+    
+
+	
+	
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="card col-12 col-md-12 col-lg-10">
+				<div class="card-wrapper">
+					<div class="card-box align-center">
+						<h1 class="card-title mbr-fonts-style mb-4 display-1">
+							<strong>Unleash Energy Predictions Now!</strong>
+						</h1>
+						<p class="mbr-text mbr-fonts-style mb-4 display-7">Experience the Future of Energy Forecasting with Our Cutting-Edge Interface</p>
+						<div class="mbr-section-btn mt-4"><a class="btn btn-primary display-7" href="https://mobiri.se">Get Predictions</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section data-bs-version="5.1" class="list1 cid-ubtA1HzlLE" id="faq-1-ubtA1HzlLE">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12 col-lg-10 m-auto">
+                <div class="content">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-12 content-head">
+                            <div class="mbr-section-head">
+                                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                                    <strong>Got Questions? We Have Answers!</strong>
+                                </h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bootstrap-accordion_9" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_9" aria-expanded="false" aria-controls="collapse1">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">How does it work?</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse1_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_9">
+                                <div class="panel-body">
+                                    <p class="mbr-fonts-style panel-text display-7">Our cutting-edge deep learning project predicts energy consumption in base stations using XGBoost and LSTM models. Simply input the station characteristics, hit 'Predict,' and voilà!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_9" aria-expanded="false" aria-controls="collapse2">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Why choose us?</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse2_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_9">
+                                <div class="panel-body">
+                                    <p class="mbr-fonts-style panel-text display-7">We're not your average prediction site. We blend AI wizardry with a sprinkle of magic to give you energy forecasts that are out of this world!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_9" aria-expanded="false" aria-controls="collapse3">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Need help?</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse3_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_9">
+                                <div class="panel-body">
+                                    <p class="mbr-fonts-style panel-text display-7">Our team of energy enthusiasts is here to guide you through the prediction process. Don't hesitate to reach out for any assistance!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_9" aria-expanded="false" aria-controls="collapse4">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">What sets us apart?</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse4_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_9">
+                                <div class="panel-body">
+                                    <p class="mbr-fonts-style panel-text display-7">We're not just about predictions; we're about creating an electrifying experience for our users. Join us on this energy-filled journey!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_9" aria-expanded="false" aria-controls="collapse5">
+                                    <h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Ready to predict?</h6>
+                                    <span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
+                                </a>
+                            </div>
+                            <div id="collapse5_9" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_9">
+                                <div class="panel-body">
+                                    <p class="mbr-fonts-style panel-text display-7">Get your energy prediction game on! Input the station details, hit 'Predict,' and watch the magic unfold before your eyes!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="social05 cid-ubtA1HzTOZ" id="follow-us-2-ubtA1HzTOZ">
+    
+
+    
+
+    <div class="container">
+        <div class="row">
+            <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
+                <strong>Join the Energy Fun!</strong>
+            </h3>
+            <div class="col-12">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form5 cid-ubtA1HzytA" id="contact-form-2-ubtA1HzytA">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>Energy Prediction Form</strong>
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="F80MHdKy7+IuxkKK/HvqnDDobAXOaceKlDhZ4TrFVxRTOWVHxJ5x+j6haCbZ/6QPq3w4M77kweEni7sxtnlBk9oUO0BsW4o+fC/TFzzxBeZWV323mG6bsyrDI9rTXZu9">
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-contact-form-2-ubtA1HzytA">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-contact-form-2-ubtA1HzytA">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="textarea">
+                            <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-contact-form-2-ubtA1HzytA"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7">Predict Energy</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="footer3 cid-ubtA1HA0bn" once="footers" id="footer-6-ubtA1HA0bn">
+
+        
+
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="row-links">
+                <ul class="header-menu">
+                  
+                  
+                  
+                  
+                <li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">About</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Services</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Blog</a>
+                  </li><li class="header-menu-item mbr-fonts-style display-5">
+                    <a href="#" class="text-white">Contact</a>
+                  </li></ul>
+              </div>
+
+            
+            <div class="col-12 mt-4">
+                <p class="mbr-fonts-style copyright display-7">© 2024 Energy Forecast. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/parallax/jarallax.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/ytplayer/index.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/vimeoplayer/player.js"></script>
+  <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid/formoid.min.js"></script>
+  
+  
+  
+</body>
+</html>
