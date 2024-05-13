@@ -7,7 +7,7 @@ import tensorflow as tf
 app = Flask(__name__)
 
 # Load the LSTM model
-model = tf.keras.models.load_model('/models/lstm_model.h5')
+model = tf.keras.models.load_model('./models/lstm_model.h5')
 
 # Load the MinMaxScaler and fit it to the training data
 scaler = MinMaxScaler()
