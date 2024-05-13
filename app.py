@@ -7,7 +7,7 @@ import tensorflow as tf
 app = Flask(__name__)
 
 # Load the LSTM model
-model = tf.keras.models.load_model('./models/lstm_model.h5')
+model = tf.keras.models.load_model('./models/lstm_model (1).h5')
 
 # Load the MinMaxScaler and fit it to the training data
 scaler = MinMaxScaler()
@@ -23,15 +23,21 @@ def preprocess_input(bs, cell_name, load, frequency, bandwidth, antennas, txpowe
 @app.route('/predict', methods=['POST'])
 def predict():
     # Extract form data from request
-    bs = float(request.form.get('BS'))
-    cell_name = float(request.form.get('CellName'))
-    date = float(request.form.get('date'))
+    bs = request.form.get('BS')
+    cell_name = request.form.get('CellName')
+    date = request.form.get('date')
+     #frequency =request.form.get('frequency')
+     #bandwidth=request.form.get('bandwidth')
+     #antennas=request.form.get('antennas')
+     #txpower=request.form.get('txpower')
+
+
     
     # Preprocess input data
-    input_data = preprocess_input(bs, cell_name, date)
+    #input_data = preprocess_input(bs,  date)
     
     # Perform prediction using the loaded model
-    prediction = model.predict(input_data)
+    prediction = model.predict(bs, date)
     
     # Pass prediction to the client
     return jsonify({'prediction': prediction.tolist()})
