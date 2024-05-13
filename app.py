@@ -13,12 +13,12 @@ model = tf.keras.models.load_model('./models/lstm_model (1).h5')
 scaler = MinMaxScaler()
 scaler.fit(pd.read_csv('merged_data.csv')[['Month', 'Day', 'Hour', 'load', 'Frequency', 'Bandwidth', 'Antennas', 'TXpower', 'Energy']])
 
-def preprocess_input(bs, cell_name, load, frequency, bandwidth, antennas, txpower):
-    numerical_data = scaler.transform([[load, frequency, bandwidth, antennas, txpower]])
-    categorical_data = pd.get_dummies(pd.DataFrame({'BS': [bs], 'CellName': [cell_name]}))
-    input_data = np.concatenate((numerical_data, categorical_data.values), axis=1)
-    input_data_reshaped = input_data.reshape((input_data.shape[0], 1, input_data.shape[1]))
-    return input_data_reshaped
+#def preprocess_input(bs, cell_name, load, frequency, bandwidth, antennas, txpower):
+ #   numerical_data = scaler.transform([[load, frequency, bandwidth, antennas, txpower]])
+  #  categorical_data = pd.get_dummies(pd.DataFrame({'BS': [bs], 'CellName': [cell_name]}))
+   # input_data = np.concatenate((numerical_data, categorical_data.values), axis=1)
+    #input_data_reshaped = input_data.reshape((input_data.shape[0], 1, input_data.shape[1]))
+    #return input_data_reshaped
 
 @app.route('/predict', methods=['POST'])
 def predict():
