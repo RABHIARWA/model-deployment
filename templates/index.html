@@ -410,7 +410,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form action="/predict" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="Base Station ID" data-form-email="true" value="F80MHdKy7+IuxkKK/HvqnDDobAXOaceKlDhZ4TrFVxRTOWVHxJ5x+j6haCbZ/6QPq3w4M77kweEni7sxtnlBk9oUO0BsW4o+fC/TFzzxBeZWV323mG6bsyrDI9rTXZu9">
+                <form id="predictionForm" action="/predict" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="Base Station ID" data-form-email="true" value="F80MHdKy7+IuxkKK/HvqnDDobAXOaceKlDhZ4TrFVxRTOWVHxJ5x+j6haCbZ/6QPq3w4M77kweEni7sxtnlBk9oUO0BsW4o+fC/TFzzxBeZWV323mG6bsyrDI9rTXZu9">
                     <div class="row">
                         <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
                         <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
@@ -422,10 +422,36 @@
                             <input type="text" name="BS" placeholder="Base Station ID" data-form-field="name" class="form-control" value="" id="name-contact-form-2-ubtA1HzytA">
                         </div>
                         <div class="col-md col-sm-12 form-group mb-3" data-for="email">
-                            <input type="text" name="CellName" placeholder="CellName" data-form-field="email" class="form-control" value="" id="email-contact-form-2-ubtA1HzytA">
+                            <input type="date" name="date" placeholder="Enter date" data-form-field="date" class="form-control" value="" id="email-contact-form-2-ubtA1HzytA">
                         </div>
-                        <div class="col-12 form-group mb-3" data-for="textarea">
-                            <textarea name="date" placeholder="Enter Date" data-form-field="date" class="form-control" id="date-contact-form-2-ubtA1HzytA"></textarea>
+                        <div>
+                        <label for="hour">Hour:</label>
+                        <select id="hour" name="hour">
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                        </select>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit" class="btn btn-primary display-7" onclick="predictEnergy()">Predict Energy</button></div>
                         <div id="predictionResult"></div>
@@ -433,6 +459,7 @@
                 </form>
                 <script>
                     function predictEnergy() {
+                        event.preventDefault();
                         var form = document.getElementById("predictionForm");
                         var formData = new FormData(form);
                         
@@ -441,13 +468,32 @@
                             method: 'POST',
                             body: formData
                         })
-                        .then(response => response.text())
-                        .then(prediction => {
-                            // Display prediction in the designated area
-                            document.getElementById("predictionResult").innerHTML = "<p>Prediction: " + prediction + "</p>";
-                        });
+                        .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Process the JSON response
+                const predictionStr = data.prediction;
+                predictionStr = predictionStr.replace(/^\[\[|\]\]$/g, '');
+                console.log(predictionStr);
+
+                // Display the prediction string
+                document.getElementById("predictionResult").innerHTML = "<p>Prediction: " + predictionStr + "</p>";
+            
+                
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+
+                        //.then(response => response.text())
+
+                      
                     }
-                    </script>
+                </script>
             </div>
         </div>
     </div>
